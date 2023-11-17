@@ -1,0 +1,29 @@
+<div class="register-container">
+    <p *ngIf="registrationSuccessful" class="success-message">
+        Registration was successful! You can <a routerLink="/login">login</a> now.
+      </p>
+    <form [formGroup]="registerForm">
+        <h2>Register</h2>
+      <mat-form-field appearance="fill">
+        <input matInput formControlName="firstName" placeholder="First Name">
+      </mat-form-field>
+      
+      <mat-form-field appearance="fill">
+        <input matInput formControlName="lastName" placeholder="Last Name">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <input matInput formControlName="email" placeholder="Email">
+        <mat-error *ngIf="isEmailInputFieldInvalid">Enter a valid email address</mat-error>
+      </mat-form-field>
+      
+      <mat-form-field appearance="fill">
+        <input matInput formControlName="password" type="password" placeholder="Password">
+        <mat-error *ngIf="isPasswordInputFieldInvalid">Password must contain at least 8 characters</mat-error>
+      </mat-form-field>
+      
+      <button mat-raised-button color="primary" 
+      [disabled]="!isRegisterFormReadyToSubmit"
+      (click)="onRegister()">Register</button>
+    </form>
+  </div>

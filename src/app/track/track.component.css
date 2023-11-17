@@ -1,0 +1,7 @@
+.track-container {
+    border: 3px solid black;
+    border-radius: 25px;
+    width: 95%;
+    margin: auto;
+    height: 95vh;
+}

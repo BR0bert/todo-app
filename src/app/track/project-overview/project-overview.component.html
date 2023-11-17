@@ -1,0 +1,14 @@
+<div class="project-overview-container">
+    <h2>Project Overview</h2>
+    <div class="project-list" [class.scrollable]="projects.length > 5">
+      <mat-nav-list>
+        <mat-list-item *ngFor="let project of projects">
+            {{project.name}}
+        </mat-list-item>
+      </mat-nav-list>
+    </div>
+    <button  mat-raised-button color="primary" (click)="addNewProject()">
+      <mat-icon>add</mat-icon>
+      New Project
+    </button>
+</div>

@@ -1,0 +1,17 @@
+<div class="login-container">
+<form [formGroup]="loginForm">
+  <h2>Login</h2>
+    <mat-form-field appearance="fill">
+      <input matInput formControlName="email" placeholder="Email">
+      <mat-error *ngIf="isEmailInputFieldInvalid">Enter a valid email address</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <input matInput formControlName="password" type="password" placeholder="Password">
+    </mat-form-field>
+
+    <p>Don't have an account yet? <a routerLink="/register">Register</a></p>
+    
+    <button mat-raised-button color="primary" [disabled]="!isLoginFormReadyToSubmit">Login</button>
+</form>
+</div>
